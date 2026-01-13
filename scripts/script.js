@@ -5,6 +5,10 @@ const youtube = document.getElementById("youtube");
 const github = document.getElementById("github");
 const footer = document.getElementById("footer");
 const logo = document.getElementById("logo");
+const english = document.getElementById("english");
+const bangla = document.getElementById("bangla");
+const bnEn = document.getElementById("bn-En");
+const footerTitle = document.getElementById("footer-title");
 
 facebook.href = "https://www.facebook.com";
 facebook.target = "_blank";
@@ -47,3 +51,14 @@ footer.classList.add("mx-auto");
 logo.classList.add("flex");
 logo.classList.add("items-center");
 logo.classList.add("gap-1");
+
+english.classList.add("font-bold");
+english.classList.add("text-2xl");
+
+bangla.classList.add("font-tiro");
+bangla.classList.add("text-2xl");
+bangla.classList.add("font-medium");
+
+bnEn.classList.add("font-tiro");
+
+footerTitle.classList.add("footer-title");
