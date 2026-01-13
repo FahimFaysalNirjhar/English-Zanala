@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,14 +33,16 @@
     </style>
   </head>
   <body>
-    <header class="bg-gray-100 border border-b-[#C6BDBD] sticky top-0 z-50">
-      <div class="flex justify-between max-w-10/12 mx-auto items-center p-5">
+    <header class="bg-gray-100 border-b border-b-[#C6BDBD] sticky top-0 z-50">
+      <div
+        class="flex flex-col md:flex-row gap-4 justify-between max-w-10/12 mx-auto items-center p-5"
+      >
         <div class="flex items-center gap-1">
           <p class="font-bold text-2xl">English</p>
           <img src="assets/logo.png" alt="" />
           <p class="font-tiro text-2xl font-medium">জানালা</p>
         </div>
-        <nav>
+        <nav class="flex gap-3">
           <button class="btn text-[#422AD5] border-2 border-[#422AD5]">
             <i class="fa-solid fa-circle-question text-lg"></i>
             FAQ
@@ -72,6 +74,162 @@
           </p>
         </div>
         <img src="assets/hero_img.png" alt="" />
+      </section>
+      <!-- FaQ section -->
+      <section class="w-11/12 mx-auto my-20">
+        <h1 class="font-poppins text-4xl font-bold text-center mb-20">
+          <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+        </h1>
+        <!-- accordion -->
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title font-semibold">
+            1. What is the difference between var, let and const?
+          </div>
+          <div class="collapse-content text-sm">
+            var, let, and const are used to declare variables in JavaScript, but
+            they differ in how they behave. <br />
+            <br />
+            var is function-scoped, meaning it is accessible throughout the
+            function in which it is declared. It allows redeclaration and
+            reassignment, which can cause bugs and unexpected results, so it is
+            not recommended in modern JavaScript. <br />
+            <br />
+            let is block-scoped, so it only exists within the block where it is
+            declared. It cannot be redeclared in the same scope, but its value
+            can be changed later. <br />
+            <br />
+            const is also block-scoped like let, but its value cannot be
+            reassigned after declaration. It must be initialized at the time of
+            declaration, although the contents of an object or array stored in a
+            const variable can still be modified.
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            2. What is the difference between map(), foreach() and filter()
+          </div>
+          <div class="collapse-content text-sm">
+            <span class="font-bold">
+              Difference between map(), forEach(), and filter()</span
+            >
+            <br />
+            <br />
+            map(), forEach(), and filter() are array methods in JavaScript used
+            to process elements of an array, but they serve different purposes.
+            <br />
+            <br />
+            map() is used to transform each element of an array and return a new
+            array containing the modified values. It does not change the
+            original array and always returns an array of the same length.
+            <br />
+            <br />
+            forEach() is used to execute a function on each element of an array,
+            but it does not return a new array. It is mainly used for performing
+            actions such as logging values, updating the UI, or modifying
+            external variables. <br />
+            <br />
+            filter() is used to select elements from an array that satisfy a
+            specific condition and return a new array containing only the
+            elements that match the condition. The length of the returned array
+            may be smaller than the original.
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            3. What are arrow functions and how are they different from regular
+            functions?
+          </div>
+          <div class="collapse-content text-sm">
+            Arrow functions are a shorter syntax for writing functions in
+            JavaScript. They were introduced in ES6 to make function expressions
+            more concise and easier to read, especially for small functions.
+            <br />
+            <br />
+            The main difference between arrow functions and regular functions is
+            how they handle the this keyword. Arrow functions do not have their
+            own this; instead, they inherit this from the surrounding scope.
+            Regular functions have their own this, which depends on how the
+            function is called.
+            <br />
+            <br />
+            Another difference is that arrow functions cannot be used as
+            constructors and cannot be called with the new keyword, whereas
+            regular functions can be used to create objects.
+            <br /><br />
+            Arrow functions also do not have their own arguments object, while
+            regular functions do.
+            <br />
+            <br />
+            In summary, arrow functions provide a cleaner syntax and lexically
+            bind this, making them especially useful in callbacks and situations
+            where you want to preserve the surrounding this context.
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            4. How JavaScript Promises Work?
+          </div>
+          <div class="collapse-content text-sm">
+            A Promise in JavaScript is an object that represents the eventual
+            result of an asynchronous operation. It allows you to write
+            asynchronous code in a more structured and readable way, instead of
+            deeply nested callbacks.
+            <br />
+            <br />
+            A Promise can be in one of three states:
+            <br />
+            <br />
+            1. Pending – The operation has not completed yet. <br />
+            2. Fulfilled (Resolved) – The operation completed successfully, and
+            the promise has a value. <br />
+            3. Rejected – The operation failed, and the promise has a reason for
+            the failure (an error). <br /><br />
+            You create a promise using the Promise constructor, which takes a
+            function with two parameters: resolve and reject. <br />
+            <br />
+            * resolve(value) is called when the operation succeeds. <br />
+            * reject(error) is called when the operation fails. <br />
+            <br />
+            You handle promises using the .then() method for successful results,
+            .catch() for errors, and .finally() for code that should run in
+            either case. Promises can also be chained, allowing multiple
+            asynchronous operations to be performed in order without creating
+            “callback hell.”
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            5. How Closures Work in JavaScript?
+          </div>
+          <div class="collapse-content text-sm">
+            A closure is a function that remembers and has access to variables
+            from the scope in which it was created, even after that outer
+            function has finished executing.
+            <br />
+            <br />
+            Closures allow a function to “close over” its environment, which
+            means it can access variables from its parent scope, even if the
+            parent function has already returned. This is possible because in
+            JavaScript, functions are first-class objects and retain a reference
+            to their lexical environment.
+            <br />
+            <br />
+            Closures are commonly used to: <br />
+            <br />
+            * Create private variables that cannot be accessed from outside the
+            function. <br />
+            * Maintain state between function calls. <br />
+            * Implement
+            <span class="font-bold"
+              >callback functions and functional programming patterns.</span
+            >
+          </div>
+        </div>
       </section>
     </main>
     <script src="scripts/logOut.js"></script>
