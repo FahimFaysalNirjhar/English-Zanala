@@ -9,6 +9,11 @@ const english = document.getElementById("english");
 const bangla = document.getElementById("bangla");
 const bnEn = document.getElementById("bn-En");
 const footerTitle = document.getElementById("footer-title");
+const social = document.getElementById("social");
+const nav = document.getElementById("nav");
+const logoContainer = document.getElementById("logo-container");
+const logoEng = document.getElementById("logo-eng");
+const logoBng = document.getElementById("logo-bng");
 
 facebook.href = "https://www.facebook.com";
 facebook.target = "_blank";
@@ -54,6 +59,7 @@ logo.classList.add("gap-1");
 
 english.classList.add("font-bold");
 english.classList.add("text-2xl");
+english.classList.add("font-poppins");
 
 bangla.classList.add("font-tiro");
 bangla.classList.add("text-2xl");
@@ -62,3 +68,22 @@ bangla.classList.add("font-medium");
 bnEn.classList.add("font-tiro");
 
 footerTitle.classList.add("footer-title");
+
+social.classList.add("grid");
+social.classList.add("grid-flow-col");
+social.classList.add("gap-4");
+
+nav.classList.add("flex");
+nav.classList.add("gap-3");
+
+logoContainer.classList.add("flex");
+logoContainer.classList.add("items-center");
+logoContainer.classList.add("gap-1");
+
+logoEng.classList.add("font-poppins");
+logoEng.classList.add("font-bold");
+logoEng.classList.add("text-2xl");
+
+logoBng.classList.add("font-tiro");
+logoBng.classList.add("text-2xl");
+logoBng.classList.add("font-medium");
