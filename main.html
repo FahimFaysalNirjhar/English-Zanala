@@ -64,10 +64,8 @@
       </div>
     </header>
     <main>
-      <section
-        class="flex flex-col md:flex-row items-center justify-between w-11/12 mx-auto mt-20"
-      >
-        <div class="description">
+      <section id="description">
+        <div>
           <h1 class="text-5xl font-poppins font-bold">
             <span class="text-[#48cae4]">English </span>is Easy!!
           </h1>
@@ -88,7 +86,7 @@
         </h1>
         <!-- accordion -->
         <div class="collapse collapse-plus bg-base-100 border border-base-300">
-          <input type="radio" name="my-accordion-3" />
+          <input type="radio" name="my-accordion-3" checked="checked" />
           <div class="collapse-title font-semibold">
             1. What is the difference between var, let and const?
           </div>
@@ -239,7 +237,9 @@
       </section>
     </main>
     <footer class="p-10 border-t-4 border-t-[#FFEBEB]">
-      <div class="flex flex-row justify-between items-center w-11/12 mx-auto">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center w-11/12 mx-auto"
+      >
         <aside>
           <div class="flex items-center gap-1">
             <p class="font-bold text-2xl">English</p>

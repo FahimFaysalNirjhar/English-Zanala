@@ -1,3 +1,4 @@
+const description = document.getElementById("description");
 const faq = document.getElementById("faq");
 const facebook = document.getElementById("facebook");
 const youtube = document.getElementById("youtube");
@@ -22,3 +23,12 @@ faq.addEventListener("click", () => {
   const accordion = document.getElementById("accordion");
   accordion.scrollIntoView({ behavior: "smooth" });
 });
+
+description.classList.add("flex");
+description.classList.add("flex-col");
+description.classList.add("md:flex-row");
+description.classList.add("items-center");
+description.classList.add("justify-between");
+description.classList.add("w-11/12");
+description.classList.add("mx-auto");
+description.classList.add("mt-20");
