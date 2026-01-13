@@ -43,7 +43,7 @@
           <p class="font-tiro text-2xl font-medium">জানালা</p>
         </div>
         <nav class="flex gap-3">
-          <button class="btn text-[#422AD5] border-2 border-[#422AD5]">
+          <button id="faq" class="btn text-[#422AD5] border-2 border-[#422AD5]">
             <i class="fa-solid fa-circle-question text-lg"></i>
             FAQ
           </button>
@@ -76,13 +76,13 @@
         <img src="assets/hero_img.png" alt="" />
       </section>
       <!-- FaQ section -->
-      <section class="w-11/12 mx-auto my-20">
+      <section id="accordion" class="w-11/12 mx-auto my-20">
         <h1 class="font-poppins text-4xl font-bold text-center mb-20">
           <span class="text-[#00BCFF]">Frequently</span> Asked Questions
         </h1>
         <!-- accordion -->
         <div class="collapse collapse-plus bg-base-100 border border-base-300">
-          <input type="radio" name="my-accordion-3" checked="checked" />
+          <input type="radio" name="my-accordion-3" />
           <div class="collapse-title font-semibold">
             1. What is the difference between var, let and const?
           </div>
@@ -233,5 +233,6 @@
       </section>
     </main>
     <script src="scripts/logOut.js"></script>
+    <script src="scripts/accordion.js"></script>
   </body>
 </html>
