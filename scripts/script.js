@@ -3,6 +3,9 @@ const faq = document.getElementById("faq");
 const facebook = document.getElementById("facebook");
 const youtube = document.getElementById("youtube");
 const github = document.getElementById("github");
+const footer = document.getElementById("footer");
+const logo = document.getElementById("logo");
+
 facebook.href = "https://www.facebook.com";
 facebook.target = "_blank";
 youtube.target = "_blank";
@@ -32,3 +35,15 @@ description.classList.add("justify-between");
 description.classList.add("w-11/12");
 description.classList.add("mx-auto");
 description.classList.add("mt-20");
+
+footer.classList.add("flex");
+footer.classList.add("flex-col");
+footer.classList.add("md:flex-row");
+footer.classList.add("justify-between");
+footer.classList.add("items-center");
+footer.classList.add("w-11/12");
+footer.classList.add("mx-auto");
+
+logo.classList.add("flex");
+logo.classList.add("items-center");
+logo.classList.add("gap-1");
