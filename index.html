@@ -28,7 +28,7 @@
   </head>
   <body>
     <main
-      class="flex flex-col lg:flex-row items-center justify-between w-11/12 mx-auto mt-20"
+      class="flex flex-col md:flex-row items-center justify-between w-11/12 mx-auto mt-20"
     >
       <div class="description">
         <h1 class="text-5xl font-poppins font-bold">
@@ -40,14 +40,27 @@
           অন্য একটি Level এ
         </p>
         <fieldset class="fieldset w-xs mt-8 gap-6">
-          <input type="text" class="input" placeholder="Enter Your Name" />
+          <input
+            id="Name-Input"
+            type="text"
+            class="input"
+            placeholder="Enter Your Name"
+          />
 
-          <input type="password" class="input" placeholder="Password" />
+          <input
+            id="Password-Input"
+            type="password"
+            class="input"
+            placeholder="Enter Login Code (123456)"
+          />
 
-          <button class="btn bg-[#422AD5] text-white">Get Started</button>
+          <button id="login" class="btn bg-[#422AD5] text-white">
+            Get Started
+          </button>
         </fieldset>
       </div>
       <img src="assets/hero_img.png" alt="" />
     </main>
+    <script src="scripts/login.js"></script>
   </body>
 </html>

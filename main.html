@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Daisy Ul & Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css"
+    />
+    <!-- Custom CSS -->
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+        --font-poppins: "Poppins", sans-serif;
+        --font-tiro: "Tiro Bangla", serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-gray-100 border border-b-[#C6BDBD]">
+      <div class="flex justify-between max-w-10/12 mx-auto items-center p-5">
+        <div class="flex items-center gap-1">
+          <p class="font-bold text-2xl">English</p>
+          <img src="assets/logo.png" alt="" />
+          <p class="font-tiro text-2xl font-medium">জানালা</p>
+        </div>
+        <nav>
+          <button class="btn text-[#422AD5] border-2 border-[#422AD5]">
+            <i class="fa-solid fa-circle-question text-lg"></i>
+            FAQ
+          </button>
+          <button class="btn text-[#422AD5] border-2 border-[#422AD5]">
+            <i class="fa-etch fa-solid fa-book-open"></i> Learn
+          </button>
+          <button class="btn text-[#422AD5] border-2 border-[#422AD5]">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>
