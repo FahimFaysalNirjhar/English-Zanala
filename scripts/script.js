@@ -107,3 +107,7 @@ headerContainer.classList.add("max-w-10/12");
 headerContainer.classList.add("mx-auto");
 headerContainer.classList.add("items-center");
 headerContainer.classList.add("p-5");
+
+faq.classList.add("text-[#422AD5]");
+faq.classList.add("border-2");
+faq.classList.add("border-[#422AD5]");
