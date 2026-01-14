@@ -14,6 +14,8 @@ const nav = document.getElementById("nav");
 const logoContainer = document.getElementById("logo-container");
 const logoEng = document.getElementById("logo-eng");
 const logoBng = document.getElementById("logo-bng");
+const header = document.getElementById("header");
+const headerContainer = document.getElementById("header-container");
 
 facebook.href = "https://www.facebook.com";
 facebook.target = "_blank";
@@ -87,3 +89,21 @@ logoEng.classList.add("text-2xl");
 logoBng.classList.add("font-tiro");
 logoBng.classList.add("text-2xl");
 logoBng.classList.add("font-medium");
+
+header.classList.add("bg-gray-100");
+header.classList.add("border-b");
+header.classList.add("border-b-[#C6BDBD]");
+header.classList.add("border-b-[#C6BDBD]");
+header.classList.add("sticky");
+header.classList.add("top-0");
+header.classList.add("z-50");
+
+headerContainer.classList.add("flex");
+headerContainer.classList.add("flex-col");
+headerContainer.classList.add("md:flex-row");
+headerContainer.classList.add("gap-4");
+headerContainer.classList.add("justify-between");
+headerContainer.classList.add("max-w-10/12");
+headerContainer.classList.add("mx-auto");
+headerContainer.classList.add("items-center");
+headerContainer.classList.add("p-5");
