@@ -16,6 +16,7 @@ const logoEng = document.getElementById("logo-eng");
 const logoBng = document.getElementById("logo-bng");
 const header = document.getElementById("header");
 const headerContainer = document.getElementById("header-container");
+const section = document.getElementById("api-section");
 
 facebook.href = "https://www.facebook.com";
 facebook.target = "_blank";
@@ -111,3 +112,19 @@ headerContainer.classList.add("p-5");
 faq.classList.add("text-[#422AD5]");
 faq.classList.add("border-2");
 faq.classList.add("border-[#422AD5]");
+
+section.classList.add("w-11/12");
+section.classList.add("mx-auto");
+section.classList.add("my-20");
+
+const h1 = document.createElement("h1");
+h1.innerHTML = `
+<span class="text-[#00BCFF]">Let's</span> Learn Vocabularies`;
+
+h1.classList.add("font-poppins");
+h1.classList.add("text-4xl");
+h1.classList.add("font-bold");
+h1.classList.add("text-center");
+h1.classList.add("mb-20");
+
+section.appendChild(h1);
