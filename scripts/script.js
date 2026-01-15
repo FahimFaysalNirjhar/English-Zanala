@@ -17,6 +17,7 @@ const logoBng = document.getElementById("logo-bng");
 const header = document.getElementById("header");
 const headerContainer = document.getElementById("header-container");
 const section = document.getElementById("api-section");
+const lesson = document.getElementById("lesson");
 
 facebook.href = "https://www.facebook.com";
 facebook.target = "_blank";
@@ -113,9 +114,15 @@ faq.classList.add("text-[#422AD5]");
 faq.classList.add("border-2");
 faq.classList.add("border-[#422AD5]");
 
-section.classList.add("w-11/12");
+section.classList.add("w-10/12");
 section.classList.add("mx-auto");
 section.classList.add("my-20");
+
+lesson.addEventListener("click", () => {
+  removeActive();
+  lesson.classList.add("active");
+  section.scrollIntoView({ behavior: "smooth" });
+});
 
 const h1 = document.createElement("h1");
 h1.innerHTML = `
