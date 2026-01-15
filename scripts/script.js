@@ -128,3 +128,42 @@ h1.classList.add("text-center");
 h1.classList.add("mb-20");
 
 section.appendChild(h1);
+
+const container = document.createElement("div");
+container.classList.add("flex");
+container.classList.add("justify-center");
+container.classList.add("items-center");
+container.classList.add("flex-wrap");
+container.classList.add("gap-6");
+section.appendChild(container);
+// {
+//     "id": 101,
+//     "level_no": 1,
+//     "lessonName": "Basic Vocabulary"
+// }
+
+function loadLessons() {
+  const URL = `https://openapi.programming-hero.com/api/levels/all`;
+  fetch(URL)
+    .then((response) => response.json())
+    .then((data) => displayLessons(data.data));
+}
+
+const displayLessons = (data) => {
+  console.log(data);
+
+  for (item of data) {
+    const name = item.lessonName;
+
+    const div = document.createElement("div");
+
+    div.innerHTML = `
+    <button class="btn text-[#422AD5]  border-2 border-[#422AD5]">
+            <i class="fa-etch fa-solid fa-book-open"></i> ${name}
+          </button>
+    `;
+    container.appendChild(div);
+  }
+};
+
+loadLessons();
