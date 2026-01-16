@@ -143,13 +143,16 @@ container.classList.add("items-center");
 container.classList.add("flex-wrap");
 container.classList.add("gap-6");
 section.appendChild(container);
+
+const cardContainer = document.createElement("div");
+section.appendChild(cardContainer);
 // {
 //     "id": 101,
 //     "level_no": 1,
 //     "lessonName": "Basic Vocabulary"
 // }
 
-function loadLessons() {
+function loadButtons() {
   const URL = `https://openapi.programming-hero.com/api/levels/all`;
   fetch(URL)
     .then((response) => response.json())
@@ -157,7 +160,7 @@ function loadLessons() {
 }
 
 const displayLessons = (data) => {
-  console.log(data);
+  // console.log(data);
 
   for (item of data) {
     const name = item.lessonName;
@@ -165,7 +168,7 @@ const displayLessons = (data) => {
     const div = document.createElement("div");
 
     div.innerHTML = `
-    <button class="btn text-[#422AD5]  border-2 border-[#422AD5]">
+    <button class="btn text-[#422AD5] border-2 border-[#422AD5]" onclick=loadLessons(${item.level_no}) >
             <i class="fa-etch fa-solid fa-book-open"></i> ${name}
           </button>
     `;
@@ -173,4 +176,50 @@ const displayLessons = (data) => {
   }
 };
 
-loadLessons();
+loadButtons();
+
+function loadLessons(id) {
+  console.log(id);
+  const URL = `https://openapi.programming-hero.com/api/level/${id}`;
+  fetch(URL)
+    .then((response) => response.json())
+    .then((data) => displayWords(data.data));
+}
+
+// {
+//     "id": 5,
+//     "level": 1,
+//     "word": "Eager",
+//     "meaning": "আগ্রহী",
+//     "pronunciation": "ইগার"
+// }
+
+const displayWords = (words) => {
+  console.log(words);
+  cardContainer.innerHTML = "";
+  words.forEach((word) => {
+    const card = document.createElement("div");
+    card.innerHTML = `
+      <div class="card text-neutral-content rounded-xl">
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-black font-bold text-3xl">${word.word}</h2>
+            <p class="text-black font-bold text-lg text-gray-500">
+              Meaning /Pronounciation
+            </p>
+            <p class="text-black font-bold text-2xl">
+              "${word.meaning} / ${word.pronunciation}"
+            </p>
+            <div class="card-actions justify-between w-full mt-6">
+              <button class="btn">
+                <i class="fa-etch fa-solid fa-circle-info text-lg"></i>
+              </button>
+              <button class="btn">
+                <i class="fa-solid fa-volume text-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+    `;
+    cardContainer.append(card);
+  });
+};
