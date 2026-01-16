@@ -142,7 +142,12 @@ container.classList.add("justify-center");
 container.classList.add("items-center");
 container.classList.add("flex-wrap");
 container.classList.add("gap-6");
+const div = document.createElement("div");
 section.appendChild(container);
+section.appendChild(div);
+div.classList.add("text-center");
+div.classList.add("py-6");
+div.classList.add("hidden");
 
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("bg-[#F8F8F8]");
@@ -156,6 +161,7 @@ cardContainer.classList.add("lg:grid-cols-3");
 cardContainer.classList.add("gap-6");
 cardContainer.classList.add("auto-rows-fr");
 section.appendChild(cardContainer);
+
 cardContainer.innerHTML = `
   <div class="flex flex-col gap-5 justify-center items-center col-span-3">
           <p class="text-[#79716B] font-tiro text-sm">
@@ -171,6 +177,24 @@ cardContainer.innerHTML = `
 //     "level_no": 1,
 //     "lessonName": "Basic Vocabulary"
 // }
+
+div.innerHTML = `
+  <span class="loading loading-spinner loading-xs"></span>
+<span class="loading loading-spinner loading-sm"></span>
+<span class="loading loading-spinner loading-md"></span>
+<span class="loading loading-spinner loading-lg"></span>
+<span class="loading loading-spinner loading-xl"></span>
+`;
+
+function showLoader() {
+  div.classList.remove("hidden");
+  cardContainer.classList.add("hidden");
+}
+
+function hideLoader() {
+  div.classList.add("hidden");
+  cardContainer.classList.remove("hidden");
+}
 
 function loadButtons() {
   const URL = `https://openapi.programming-hero.com/api/levels/all`;
@@ -199,6 +223,7 @@ const displayLessons = (data) => {
 loadButtons();
 
 function loadLessons(id) {
+  showLoader();
   console.log(id);
   const URL = `https://openapi.programming-hero.com/api/level/${id}`;
   fetch(URL)
@@ -261,4 +286,5 @@ const displayWords = (words) => {
     `;
     cardContainer.append(card);
   });
+  hideLoader();
 };
