@@ -145,6 +145,15 @@ container.classList.add("gap-6");
 section.appendChild(container);
 
 const cardContainer = document.createElement("div");
+cardContainer.classList.add("bg-[#F8F8F8]");
+cardContainer.classList.add("rounded-3xl");
+cardContainer.classList.add("rounded-3xl");
+cardContainer.classList.add("my-10");
+cardContainer.classList.add("p-8");
+cardContainer.classList.add("grid");
+cardContainer.classList.add("grid-cols-3");
+cardContainer.classList.add("gap-6");
+cardContainer.classList.add("auto-rows-fr");
 section.appendChild(cardContainer);
 // {
 //     "id": 101,
@@ -205,7 +214,7 @@ const displayWords = (words) => {
   words.forEach((word) => {
     const card = document.createElement("div");
     card.innerHTML = `
-      <div class="card text-neutral-content rounded-xl">
+      <div class="card bg-white rounded-xl h-full">
           <div class="card-body items-center text-center">
             <h2 class="card-title text-black font-bold text-3xl">${word.word}</h2>
             <p class="text-black font-bold text-lg text-gray-500">
