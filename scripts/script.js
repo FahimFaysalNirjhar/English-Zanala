@@ -168,7 +168,7 @@ const displayLessons = (data) => {
     const div = document.createElement("div");
 
     div.innerHTML = `
-    <button class="btn text-[#422AD5] border-2 border-[#422AD5]" onclick=loadLessons(${item.level_no}) >
+    <button id=btn-${item.level_no} class="btn text-[#422AD5] border-2 border-[#422AD5]" onclick=loadLessons(${item.level_no}) >
             <i class="fa-etch fa-solid fa-book-open"></i> ${name}
           </button>
     `;
@@ -183,7 +183,12 @@ function loadLessons(id) {
   const URL = `https://openapi.programming-hero.com/api/level/${id}`;
   fetch(URL)
     .then((response) => response.json())
-    .then((data) => displayWords(data.data));
+    .then((data) => {
+      removeActive();
+      const clickedbtn = document.getElementById(`btn-${id}`);
+      clickedbtn.classList.add("active");
+      displayWords(data.data);
+    });
 }
 
 // {
