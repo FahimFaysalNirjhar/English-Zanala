@@ -223,6 +223,19 @@ function loadLessons(id) {
 const displayWords = (words) => {
   console.log(words);
   cardContainer.innerHTML = "";
+  if (words.length === 0) {
+    cardContainer.innerHTML = `
+  <div class="flex flex-col gap-5 justify-center items-center col-span-3">
+          <img src="assets/alert-error.png" alt="" />
+          <p class="text-[#79716B] font-tiro text-sm">
+            এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
+          </p>
+          <p class="font-tiro font-semibold text-[#292524] text-3xl">
+            নেক্সট Lesson এ যান
+          </p>
+        </div>
+`;
+  }
   words.forEach((word) => {
     const card = document.createElement("div");
     card.innerHTML = `
