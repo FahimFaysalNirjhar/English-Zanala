@@ -158,12 +158,11 @@ cardContainer.classList.add("auto-rows-fr");
 section.appendChild(cardContainer);
 cardContainer.innerHTML = `
   <div class="flex flex-col gap-5 justify-center items-center col-span-3">
-          <img src="assets/alert-error.png" alt="" />
           <p class="text-[#79716B] font-tiro text-sm">
-            এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
+            আপনি এখনো কোন Lesson Select করেননি
           </p>
           <p class="font-tiro font-semibold text-[#292524] text-3xl">
-            নেক্সট Lesson এ যান
+           একটি Lesson Select করুন।
           </p>
         </div>
 `;
@@ -237,6 +236,7 @@ const displayWords = (words) => {
 `;
   }
   words.forEach((word) => {
+    const meaning = word.meaning === null ? "অর্থ নেই" : word.meaning;
     const card = document.createElement("div");
     card.innerHTML = `
       <div class="card bg-white rounded-xl h-full">
@@ -246,7 +246,7 @@ const displayWords = (words) => {
               Meaning /Pronounciation
             </p>
             <p class="text-black font-bold text-2xl">
-              "${word.meaning} / ${word.pronunciation}"
+              "${meaning} / ${word.pronunciation}"
             </p>
             <div class="card-actions justify-between w-full mt-6">
               <button class="btn">
