@@ -266,14 +266,14 @@ const displayWords = (words) => {
     card.innerHTML = `
       <div class="card bg-white rounded-xl h-full">
           <div class="card-body items-center text-center">
-            <h2 class="card-title text-black font-bold text-3xl">${word.word}</h2>
-            <p class="text-black font-bold text-lg text-gray-500">
+            <h2 class="card-title font-poppins text-black font-bold text-3xl">${word.word}</h2>
+            <p class="text-black font-poppins font-semibold text-lg text-gray-500">
               Meaning /Pronounciation
             </p>
-            <p class="text-black font-bold text-2xl">
+            <p class="text-black font-tiro font-bold text-2xl">
               "${meaning} / ${word.pronunciation}"
             </p>
-            <div class="card-actions justify-between w-full mt-6">
+            <div onclick = loadWordDetails(${word.id}) class="card-actions justify-between w-full mt-6">
               <button class="btn">
                 <i class="fa-etch fa-solid fa-circle-info text-lg"></i>
               </button>
@@ -287,4 +287,72 @@ const displayWords = (words) => {
     cardContainer.append(card);
   });
   hideLoader();
+};
+
+function loadWordDetails(id) {
+  console.log(id);
+  const URL = `https://openapi.programming-hero.com/api/word/${id}`;
+  fetch(URL)
+    .then((response) => response.json())
+    .then((data) => displayModal(data.data));
+}
+
+// {
+//     "word": "Eager",
+//     "meaning": "আগ্রহী",
+//     "pronunciation": "ইগার",
+//     "level": 1,
+//     "sentence": "The kids were eager to open their gifts.",
+//     "points": 1,
+//     "partsOfSpeech": "adjective",
+//     "synonyms": [
+//         "enthusiastic",
+//         "excited",
+//         "keen"
+//     ],
+//     "id": 5
+// }
+
+const displayModal = (word) => {
+  console.log(word.word);
+  const meaning = word.meaning === null ? "অর্থ পাওয়া যায়নি" : word.meaning;
+
+  const partsOfSpeech = word.partsOfSpeech ? word.partsOfSpeech : "";
+
+  const synonyms = word.synonyms?.length ? word.synonyms : [];
+
+  const p = synonyms.map(
+    (synonym) => `
+      <p class="flex gap-3 px-4 py-3 rounded-md border border-[#D7E4EF] bg-[#EDF7FF]">
+        ${synonym}
+      </p>
+    `
+  );
+
+  document.getElementById("word_details").showModal();
+  const modal = document.querySelector(".details-container");
+  console.log(modal);
+
+  modal.innerHTML = `
+  <div class="p-6 rounded-xl border-2 border-[#EDF7FF] bg-white flex flex-col gap-6">
+    <h1 class="text-xl font-bold font-poppins">${word.word}(<i class="fa-etch fa-solid fa-microphone"></i> ${word.pronunciation})</h1>
+
+    <h1 class="text-sm font-poppins font-semibold">Meaning</h1>
+    
+    <h1 class="text-lg font-semibold font-tiro">${meaning}</h1>
+
+    <h1 class="text-sm font-poppins font-semibold">Example</h1>
+
+    <h1 class="text-sm font-poppins">${word.sentence}</h1>
+
+    <h1 class="text-sm font-poppins font-semibold">Parts Of Speech</h1>
+
+    <h1 class="text-sm font-poppins">${partsOfSpeech}</h1>
+
+    <h1 class="text-lg font-semibold font-tiro">সমার্থক শব্দ গুলো</h1>
+
+    <div class = "flex flex-col md:flex-row gap-3">${p}</div>
+    
+  </div>
+`;
 };
