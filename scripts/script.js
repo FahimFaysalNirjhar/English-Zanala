@@ -19,6 +19,7 @@ const headerContainer = document.getElementById("header-container");
 const section = document.getElementById("api-section");
 const lesson = document.getElementById("lesson");
 const footerTag = document.querySelector("footer");
+const headerTitle = document.getElementById("header-title");
 
 facebook.href = "https://www.facebook.com";
 facebook.target = "_blank";
@@ -372,3 +373,7 @@ console.log(footerTag);
 footerTag.classList.add("p-10");
 footerTag.classList.add("border-t-4");
 footerTag.classList.add("border-t-[#FFEBEB]");
+
+headerTitle.classList.add("text-5xl");
+headerTitle.classList.add("font-poppins");
+headerTitle.classList.add("font-bold");
