@@ -385,3 +385,6 @@ headerPara.classList.add("max-w-2xl");
 headerPara.classList.add("leading-relaxed");
 headerPara.classList.add("mt-6");
 headerPara.classList.add("font-tiro");
+
+headerPara.textContent =
+  "আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ";
