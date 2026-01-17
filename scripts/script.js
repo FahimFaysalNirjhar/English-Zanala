@@ -20,6 +20,7 @@ const section = document.getElementById("api-section");
 const lesson = document.getElementById("lesson");
 const footerTag = document.querySelector("footer");
 const headerTitle = document.getElementById("header-title");
+const headerPara = document.getElementById("header-para");
 
 facebook.href = "https://www.facebook.com";
 facebook.target = "_blank";
@@ -377,3 +378,10 @@ footerTag.classList.add("border-t-[#FFEBEB]");
 headerTitle.classList.add("text-5xl");
 headerTitle.classList.add("font-poppins");
 headerTitle.classList.add("font-bold");
+
+headerPara.classList.add("text-2xl");
+headerPara.classList.add("text-[#6c757d]");
+headerPara.classList.add("max-w-2xl");
+headerPara.classList.add("leading-relaxed");
+headerPara.classList.add("mt-6");
+headerPara.classList.add("font-tiro");
