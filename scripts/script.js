@@ -273,11 +273,11 @@ const displayWords = (words) => {
             <p class="text-black font-tiro font-bold text-2xl">
               "${meaning} / ${word.pronunciation}"
             </p>
-            <div onclick = loadWordDetails(${word.id}) class="card-actions justify-between w-full mt-6">
-              <button class="btn">
+            <div class="card-actions justify-between w-full mt-6">
+              <button onclick = loadWordDetails(${word.id}) class="btn">
                 <i class="fa-etch fa-solid fa-circle-info text-lg"></i>
               </button>
-              <button class="btn">
+              <button class="btn" onclick="pronounceWord('${word.word}')">
                 <i class="fa-solid fa-volume text-lg"></i>
               </button>
             </div>
@@ -288,6 +288,15 @@ const displayWords = (words) => {
   });
   hideLoader();
 };
+
+function pronounceWord(word) {
+  console.log(word);
+
+  window.speechSynthesis.cancel(); // stop previous speech
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-US";
+  window.speechSynthesis.speak(utterance);
+}
 
 function loadWordDetails(id) {
   console.log(id);
@@ -326,7 +335,7 @@ const displayModal = (word) => {
       <p class="flex gap-3 px-4 py-3 rounded-md border border-[#D7E4EF] bg-[#EDF7FF]">
         ${synonym}
       </p>
-    `
+    `,
   );
 
   document.getElementById("word_details").showModal();
