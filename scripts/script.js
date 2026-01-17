@@ -18,6 +18,7 @@ const header = document.getElementById("header");
 const headerContainer = document.getElementById("header-container");
 const section = document.getElementById("api-section");
 const lesson = document.getElementById("lesson");
+const footerTag = document.querySelector("footer");
 
 facebook.href = "https://www.facebook.com";
 facebook.target = "_blank";
@@ -204,7 +205,7 @@ function loadButtons() {
 }
 
 const displayLessons = (data) => {
-  // console.log(data);
+  console.log(data);
 
   for (item of data) {
     const name = item.lessonName;
@@ -365,3 +366,9 @@ const displayModal = (word) => {
   </div>
 `;
 };
+
+console.log(footerTag);
+
+footerTag.classList.add("p-10");
+footerTag.classList.add("border-t-4");
+footerTag.classList.add("border-t-[#FFEBEB]");
