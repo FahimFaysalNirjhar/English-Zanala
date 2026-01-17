@@ -34,14 +34,27 @@ login.addEventListener("click", () => {
   let nameInput = document.querySelector("#Name-Input").value;
   let pin = document.querySelector("#Password-Input").value;
   let convertPin = Number(pin);
-  console.log(convertPin);
+
   if (nameInput === "") {
-    alert("Please Enter Your Name First");
-  } else {
-    if (convertPin === 123456) {
+    Swal.fire({
+      icon: "warning",
+      title: "Oops!",
+      text: "Please enter your name first",
+    });
+  } else if (convertPin === 123456) {
+    Swal.fire({
+      title: "অভিনন্দন",
+      text: "চলুন আজ নতুন কিছু শেখা যাক",
+      icon: "success",
+      confirmButtonText: "Continue",
+    }).then(() => {
       window.location.href = "./main.html";
-    } else {
-      alert("Invaild Login Code");
-    }
+    });
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "Invalid Login Code",
+      text: "Please try again",
+    });
   }
 });
